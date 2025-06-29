@@ -17,11 +17,11 @@ services:
       - RCC_DB_NAME=${RCC_DB_NAME}
       - RCC_DB_USER=${RCC_DB_USER}
       - RCC_DB_PASSWORD=${RCC_DB_PASSWORD}
-      - ts-test_HOST=${ts-test_HOST}
-      - ts-test_PORT=${ts-test_PORT}
-      - ts-test_DB_NAME=${ts-test_DB_NAME}
-      - ts-test_USER=${ts-test_USER}
-      - ts-test_PASSWORD=${ts-test_PASSWORD}
+      - ts_test_HOST=${ts-test_HOST}
+      - ts_test_PORT=${ts-test_PORT}
+      - ts_test_DB_NAME=${ts-test_DB_NAME}
+      - ts_test_USER=${ts-test_USER}
+      - ts_test_PASSWORD=${ts-test_PASSWORD}
     volumes:
       - grafana_storage:/var/lib/grafana
       - ./provisioning:/etc/grafana/provisioning
