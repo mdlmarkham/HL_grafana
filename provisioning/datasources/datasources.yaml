@@ -49,10 +49,10 @@ datasources:
   - name: ts-test
     type: postgres
     access: proxy
-    url: ${ts-test_HOST}:${ts-test_PORT}
-    database: ${ts-test_DB_NAME}
-    user: ${ts-test_USER}
-    uid: ts-test-ywg8y4vcd9
+    url: ${ts_test_HOST}:${ts_test_PORT}
+    database: ${ts_test_DB_NAME}
+    user: ${ts_-test_USER}
+    uid: ts_test-ywg8y4vcd9
     jsonData:
       postgresVersion: 1700  # PostgreSQL 17.x
       sslmode: "require"
@@ -62,4 +62,4 @@ datasources:
       connMaxLifetime: 200
       timescaledb: true  # Enable TimescaleDB features
     secureJsonData:
-      password: ${ts-test_PASSWORD}
+      password: ${ts_test_PASSWORD}
