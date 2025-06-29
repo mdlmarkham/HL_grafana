@@ -34,6 +34,7 @@ services:
       - GF_AUTH_GENERIC_OAUTH_API_URL=https://idp.tailf9480.ts.net/userinfo
       - GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP=true
       - GF_AUTH_GENERIC_OAUTH_SCOPES=openid profile email offline_access
+      - GF_AUTH_GENERIC_OAUTH_CLIENT_AUTH_METHOD=client_secret_post
       - GF_AUTH_GENERIC_OAUTH_USE_PKCE=true
       - GF_AUTH_GENERIC_OAUTH_USE_REFRESH_TOKEN=true
       # Optional: Attribute mapping
