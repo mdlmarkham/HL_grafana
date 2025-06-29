@@ -1,0 +1,31 @@
+services:
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,equansdatahub-tree-panel,volkovlabs-form-panel,volkovlabs-table-panel,yesoreyeram-infinity-datasource
+      - PNS_DB_HOST=${PNS_DB_HOST}
+      - PNS_DB_PORT=${PNS_DB_PORT}
+      - PNS_DB_NAME=${PNS_DB_NAME}
+      - PNS_DB_USER=${PNS_DB_USER}
+      - PNS_DB_PASSWORD=${PNS_DB_PASSWORD}
+      - RCC_DB_HOST=${RCC_DB_HOST}
+      - RCC_DB_PORT=${RCC_DB_PORT}
+      - RCC_DB_NAME=${RCC_DB_NAME}
+      - RCC_DB_USER=${RCC_DB_USER}
+      - RCC_DB_PASSWORD=${RCC_DB_PASSWORD}
+      - ts-test_HOST=${ts-test_HOST}
+      - ts-test_PORT=${ts-test_PORT}
+      - ts-test_DB_NAME=${ts-test_DB_NAME}
+      - ts-test_USER=${ts-test_USER}
+      - ts-test_PASSWORD=${ts-test_PASSWORD}
+    volumes:
+      - grafana_storage:/var/lib/grafana
+      - ./provisioning:/etc/grafana/provisioning
+      - ./grafana.ini:/etc/grafana/grafana.ini
+
+volumes:
+  grafana_storage: {}
