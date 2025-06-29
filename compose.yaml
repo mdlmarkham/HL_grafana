@@ -6,6 +6,8 @@ services:
     ports:
       - "3000:3000"
     environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
       - GF_INSTALL_PLUGINS=grafana-clock-panel,equansdatahub-tree-panel,volkovlabs-form-panel,volkovlabs-table-panel,yesoreyeram-infinity-datasource
       - PNS_DB_HOST=${PNS_DB_HOST}
       - PNS_DB_PORT=${PNS_DB_PORT}
