@@ -52,7 +52,7 @@ datasources:
     url: ${ts_test_HOST}:${ts_test_PORT}
     database: ${ts_test_DB_NAME}
     user: ${ts_test_USER}
-    uid: ts_test-ywg8y4vcd9
+    uid: ts-test-ywg8y4vcd9
     jsonData:
       postgresVersion: 1700  # PostgreSQL 17.x
       sslmode: "require"
