@@ -17,7 +17,7 @@ datasources:
     user: "${PNS_DB_USER}"
     uid: pns-datalogger-p0it763vx8
     jsonData:
-      postgresVersion: 1600  # PostgreSQL 17.x
+      postgresVersion: 1700  # PostgreSQL 17.x
       sslmode: "require"
       maxOpenConns: 100
       maxIdleConns: 100
@@ -36,7 +36,7 @@ datasources:
     user: ${RCC_DB_USER}
     uid: rcc-datalogger-ywg8y4vcd9
     jsonData:
-      postgresVersion: 1600  # PostgreSQL 17.x
+      postgresVersion: 1700  # PostgreSQL 17.x
       sslmode: "require"
       maxOpenConns: 100
       maxIdleConns: 100
@@ -51,7 +51,7 @@ datasources:
     access: proxy
     url: ${ts_test_HOST}:${ts_test_PORT}
     database: ${ts_test_DB_NAME}
-    user: ${ts_-test_USER}
+    user: ${ts_test_USER}
     uid: ts_test-ywg8y4vcd9
     jsonData:
       postgresVersion: 1700  # PostgreSQL 17.x
