@@ -5,7 +5,7 @@ deleteDatasources:
     orgId: 1
   - name: RCC
     orgId: 1
-  - name: Master
+  - name: ts-test
     orgId: 1
 
 datasources:
