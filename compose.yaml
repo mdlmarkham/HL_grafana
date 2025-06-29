@@ -24,6 +24,26 @@ services:
       - ts_test_DB_NAME=${ts_test_DB_NAME}
       - ts_test_USER=${ts_test_USER}
       - ts_test_PASSWORD=${ts_test_PASSWORD}
+      - GF_AUTH_GENERIC_OAUTH_ENABLED=true
+      - GF_AUTH_GENERIC_OAUTH_NAME=Tailscale
+      - GF_AUTH_GENERIC_OAUTH_CLIENT_ID=your-client-id
+      - GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET=your-client-secret
+      - GF_AUTH_GENERIC_OAUTH_AUTH_URL=https://idp.tailf9480.ts.net/authorize/4986734794352390
+      - GF_AUTH_GENERIC_OAUTH_TOKEN_URL=https://idp.tailf9480.ts.net/token
+      - GF_AUTH_GENERIC_OAUTH_API_URL=https://idp.tailf9480.ts.net/userinfo
+      - GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP=true
+      - GF_AUTH_GENERIC_OAUTH_SCOPES=openid profile email offline_access
+      - GF_AUTH_GENERIC_OAUTH_USE_PKCE=true
+      - GF_AUTH_GENERIC_OAUTH_USE_REFRESH_TOKEN=true
+      # Optional: Attribute mapping
+      - GF_AUTH_GENERIC_OAUTH_LOGIN_ATTRIBUTE_PATH=preferred_username
+      - GF_AUTH_GENERIC_OAUTH_NAME_ATTRIBUTE_PATH=name
+      - GF_AUTH_GENERIC_OAUTH_EMAIL_ATTRIBUTE_PATH=email
+      # Optional: Role mapping
+      - GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH=role
+      - GF_AUTH_GENERIC_OAUTH_ALLOW_ASSIGN_GRAFANA_ADMIN=true
+
+
     volumes:
       - grafana_storage:/var/lib/grafana
       - ./provisioning:/etc/grafana/provisioning
