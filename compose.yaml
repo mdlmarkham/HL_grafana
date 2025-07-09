@@ -24,7 +24,9 @@ services:
       - ts_test_DB_NAME=${ts_test_DB_NAME}
       - ts_test_USER=${ts_test_USER}
       - ts_test_PASSWORD=${ts_test_PASSWORD}
-      - GF_SERVER_ROOT_URL=https://grafana.tailf9480.ts.net
+      - GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL}
+      - GF_SERVER_DOMAIN=${GF_SERVER_DOMAIN}
+      - GF_SERVER_SERVE_FROM_SUB_PATH=${GF_SERVER_SERVE_FROM_SUB_PATH}
       - GF_AUTH_GENERIC_OAUTH_ENABLED=true
       - GF_AUTH_GENERIC_OAUTH_NAME=Tailscale
       - GF_AUTH_GENERIC_OAUTH_CLIENT_ID=your-client-id
