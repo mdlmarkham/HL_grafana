@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    dns:
+      - 8.8.8.8
     environment:
       - GF_INSTALL_PLUGINS=${GF_INSTALL_PLUGINS}
       - PNS_DB_HOST=${PNS_DB_HOST}
