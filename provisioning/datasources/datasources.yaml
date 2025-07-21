@@ -1,0 +1,65 @@
+apiVersion: 1
+
+deleteDatasources:
+  - name: PNS
+    orgId: 1
+  - name: RCC
+    orgId: 1
+  - name: ts-test
+    orgId: 1
+
+datasources:
+  - name: PNS-DATALOGGER
+    type: postgres
+    access: proxy
+    url: ${PNS_DB_HOST}:${PNS_DB_PORT}
+    database: ${PNS_DB_NAME}
+    user: "${PNS_DB_USER}"
+    uid: pns-datalogger-p0it763vx8
+    jsonData:
+      postgresVersion: 1700  # PostgreSQL 17.x
+      sslmode: "require"
+      maxOpenConns: 100
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      connMaxLifetime: 200
+      timescaledb: true  # Enable TimescaleDB features
+    secureJsonData:
+      password: ${PNS_DB_PASSWORD}
+    isDefault: true
+
+  - name: RCC-DATALOGGER
+    type: postgres
+    access: proxy
+    url: ${RCC_DB_HOST}:${RCC_DB_PORT}
+    database: ${RCC_DB_NAME}
+    user: ${RCC_DB_USER}
+    uid: rcc-datalogger-ywg8y4vcd9
+    jsonData:
+      postgresVersion: 1700  # PostgreSQL 17.x
+      sslmode: "require"
+      maxOpenConns: 100
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      connMaxLifetime: 200
+      timescaledb: true  # Enable TimescaleDB features
+    secureJsonData:
+      password: ${RCC_DB_PASSWORD}
+
+  - name: ts-test
+    type: postgres
+    access: proxy
+    url: ${ts_test_HOST}:${ts_test_PORT}
+    database: ${ts_test_DB_NAME}
+    user: ${ts_test_USER}
+    uid: ts-test-ywg8y4vcd9
+    jsonData:
+      postgresVersion: 1700  # PostgreSQL 17.x
+      sslmode: "require"
+      maxOpenConns: 100
+      maxIdleConns: 100
+      maxIdleConnsAuto: true
+      connMaxLifetime: 200
+      timescaledb: true  # Enable TimescaleDB features
+    secureJsonData:
+      password: ${ts_test_PASSWORD}
