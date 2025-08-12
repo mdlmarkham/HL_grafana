@@ -1,6 +1,6 @@
 services:
   grafana:
-    image: grafana/grafana-enterprise:latest
+    image: grafana/grafana-enterprise:12.2.0-16868078697-ubuntu
     container_name: grafana
     restart: unless-stopped
     ports:
